@@ -1,4 +1,11 @@
-%h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+%h3 Followers
+%p
+  We've scanned
+  =@followers.length
+  of your followers.
+-@followers.each do |follower|
+  .span3.text-center
+    %h4=link_to follower.name, root_url(:uid => follower.id)
+    =image_tag follower.profile_image_url
+    =link_to "http://twitter.com/#{follower.screen_name}" do
+      %h6="@#{follower.screen_name}"

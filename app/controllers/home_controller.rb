@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @users = User.all
+    @followers = User.find(params[:uid]).fetchFollowers
   end
 end

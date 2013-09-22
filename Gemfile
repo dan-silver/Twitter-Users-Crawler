@@ -15,6 +15,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'simple_form'
 gem 'thin'
+gem 'twitter', :git => 'https://github.com/sferik/twitter.git'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]

@@ -1,4 +1,7 @@
 ContactsMap::Application.routes.draw do
+  resources :twitter_users
+
+
   root :to => "home#index"
   resources :users, :only => [:index, :show, :edit, :update ]
   match '/auth/:provider/callback' => 'sessions#create'
