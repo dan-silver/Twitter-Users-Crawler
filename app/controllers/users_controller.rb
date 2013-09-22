@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-    def edit
+  def edit
     @user = User.find(params[:id])
   end
   
@@ -20,8 +20,12 @@ class UsersController < ApplicationController
   end
 
 
-def show
+  def show
     @user = User.find(params[:id])
+  end
+
+  def followers
+    render json: User.find(params[:id]).fetchFollowers
   end
 
 end
